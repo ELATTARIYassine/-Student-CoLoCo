@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "701294603815",
+    "firebase_url": "https://exam-abf9d.firebaseio.com",
+    "project_id": "exam-abf9d",
+    "storage_bucket": "exam-abf9d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:701294603815:android:729037617fa7e2a6bc6802",
+        "android_client_info": {
+          "package_name": "com.master.exam"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "701294603815-ovmd4pealn2lbmmtnoma0hcci6ssmlmp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBdAlPWOEtMFryoUhJbxI3tFt4Bmixgu7M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "701294603815-ovmd4pealn2lbmmtnoma0hcci6ssmlmp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
