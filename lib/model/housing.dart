@@ -7,6 +7,9 @@ class Housing {
   String superficie;
   String image;
   String rating;
+  String latitude;
+  String longitude;
+  String phone;
   // Housing({title: 'erer'});
   Housing();
 
@@ -19,6 +22,9 @@ class Housing {
     superficie = data['superficie'];
     image = data['image'];
     rating = data['rating'];
+    latitude = data['latitude'];
+    longitude = data['longitude'];
+    phone = data['phone'];
   }
 
   Map<String, dynamic> toMap() {
@@ -30,7 +36,10 @@ class Housing {
       'capacity': capacity,
       'superficie': superficie,
       'image': image,
-      'rating': rating
+      'rating': rating,
+      'latitude': latitude,
+      'longitude': longitude,
+      'phone': phone,
     };
   }
 }

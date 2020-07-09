@@ -7,6 +7,7 @@ import 'package:flutter_exam/screens/create_offer.dart';
 import 'package:flutter_exam/screens/create_demand.dart';
 import 'package:flutter_exam/screens/demands.dart';
 import 'package:flutter_exam/screens/feed.dart';
+import 'package:flutter_exam/screens/housing_map.dart';
 import 'package:flutter_exam/screens/login.dart';
 
 class MenuDrawerHousing extends StatelessWidget {
@@ -77,6 +78,18 @@ class MenuDrawerHousing extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => CreateDemand()),
+              );
+              // Navigator.of(context).pop();
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.border_color),
+            title: Text('Map'),
+            onTap: () {
+              // Navigator.of(context).pop();
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => HousingMap()),
               );
               // Navigator.of(context).pop();
             },
