@@ -106,6 +106,13 @@ class _HoustingDetailsState extends State<HoustingDetails> {
                       " m³",
                   style: TextStyle(fontSize: 18.0),
                 ),
+                SizedBox(
+                  height: 8.0,
+                ),
+                Text(
+                  "Phone :" + housingNotifier.currentHousing.phone,
+                  style: TextStyle(fontSize: 18.0),
+                ),
               ],
             ),
           ),

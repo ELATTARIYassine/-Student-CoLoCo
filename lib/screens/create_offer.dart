@@ -197,6 +197,60 @@ class _CreateOfferState extends State<CreateOffer> {
     );
   }
 
+  Widget _BuildPhoneField() {
+    return TextFormField(
+      decoration: InputDecoration(labelText: 'Phone'),
+      initialValue: _currentHousing.phone,
+      keyboardType: TextInputType.text,
+      style: TextStyle(fontSize: 20),
+      validator: (String value) {
+        if (value.isEmpty) {
+          return 'phone is required';
+        }
+        return null;
+      },
+      onSaved: (String value) {
+        _currentHousing.phone = value;
+      },
+    );
+  }
+
+  Widget _BuildLatitudeField() {
+    return TextFormField(
+      decoration: InputDecoration(labelText: 'Latitude'),
+      initialValue: _currentHousing.latitude,
+      keyboardType: TextInputType.text,
+      style: TextStyle(fontSize: 20),
+      validator: (String value) {
+        if (value.isEmpty) {
+          return 'latitude is required';
+        }
+        return null;
+      },
+      onSaved: (String value) {
+        _currentHousing.latitude = value;
+      },
+    );
+  }
+
+  Widget _BuildLongitudeField() {
+    return TextFormField(
+      decoration: InputDecoration(labelText: 'Longitude'),
+      initialValue: _currentHousing.latitude,
+      keyboardType: TextInputType.text,
+      style: TextStyle(fontSize: 20),
+      validator: (String value) {
+        if (value.isEmpty) {
+          return 'longitude is required';
+        }
+        return null;
+      },
+      onSaved: (String value) {
+        _currentHousing.longitude = value;
+      },
+    );
+  }
+
   _saveHousing() {
     if (!_formKey.currentState.validate()) {
       return;
@@ -273,6 +327,9 @@ class _CreateOfferState extends State<CreateOffer> {
               _BuildCapacityField(),
               _BuildSuperField(),
               _BuildRatingField(),
+              _BuildPhoneField(),
+              _BuildLatitudeField(),
+              _BuildLongitudeField(),
               SizedBox(
                 height: 16.0,
               )
