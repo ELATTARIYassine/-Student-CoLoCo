@@ -100,10 +100,6 @@ class MenuDrawerHousing extends StatelessWidget {
             onTap: () {
               // Navigator.of(context).pop();
               signout(authNotifier);
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => Login()),
-              );
             },
           ),
         ],

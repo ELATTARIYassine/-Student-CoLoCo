@@ -21,10 +21,6 @@ class _HousingMapState extends State<HousingMap> {
     super.initState();
   }
 
-  var list = [
-    [32.33631476281068, -6.351127624511719],
-    [32.33551703575901, -6.358509063720703]
-  ];
   _makeMarkers(Housing item, HousingNotifier housingNotifier) {
     return Marker(
         width: 45.0,
