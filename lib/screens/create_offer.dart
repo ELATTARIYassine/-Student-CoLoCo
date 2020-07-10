@@ -261,7 +261,6 @@ class _CreateOfferState extends State<CreateOffer> {
 
     print("Title : ${_currentHousing.title}");
     print("Address : ${_currentHousing.address}");
-    print("Capacity: ${_currentHousing.capacity}");
     print("Price: ${_currentHousing.price}");
     print("Image: ${_imageFile.toString()}");
     print("Superficie: ${_currentHousing.superficie}");
