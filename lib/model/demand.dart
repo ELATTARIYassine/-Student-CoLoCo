@@ -9,10 +9,10 @@ class Demand {
   Demand();
 
   Demand.fromMap(Map<String, dynamic> data) {
-    id = data['id'];
+    id = data['id'].toString();
     fullname = data['fullname'];
     phone = data['phone'];
-    budget = data['budget'];
+    budget = data['budget'].toString();
     comment = data['comment'];
   }
 

@@ -1,14 +1,17 @@
+import 'dart:convert';
 import 'dart:io';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
+import 'package:flutter_exam/api/constant.dart';
 import 'package:flutter_exam/model/housing.dart';
 import 'package:flutter_exam/model/user.dart';
 import 'package:flutter_exam/model/demand.dart';
 import 'package:flutter_exam/notifier/auth_notifier.dart';
 import 'package:flutter_exam/notifier/housing_notifier.dart';
 import 'package:flutter_exam/notifier/demand_notifier.dart';
+import 'package:http/http.dart';
 import 'package:path/path.dart' as path;
 import 'package:uuid/uuid.dart';
 
@@ -70,17 +73,21 @@ initializeCurrentUser(AuthNotifier authNotifier) async {
 }
 
 getHoustings(HousingNotifier housingNotifier) async {
-  QuerySnapshot snapshot =
-      await Firestore.instance.collection('Housings').getDocuments();
+  Response res = await get(constants.api + "api/housings-offers");
+  if (res.statusCode == 200) {
+    List<dynamic> body = jsonDecode(res.body);
 
-  List<Housing> _housingList = [];
+    List<Housing> _housingList = [];
 
-  snapshot.documents.forEach((document) {
-    Housing housing = Housing.fromMap(document.data);
-    _housingList.add(housing);
-  });
+    body.forEach((obj) {
+      Housing housing = Housing.fromMap(obj);
+      _housingList.add(housing);
+    });
 
-  housingNotifier.housingList = _housingList;
+    housingNotifier.housingList = _housingList;
+  } else {
+    throw "Can't get housings.";
+  }
 }
 
 uploadHousingAndImage(Housing housing, File localFile) async {
@@ -130,17 +137,21 @@ _uploadHousing(Housing housing, {String imageUrl}) async {
 }
 
 getDemands(DemandNotifier demandNotifier) async {
-  QuerySnapshot snapshot =
-      await Firestore.instance.collection('demands').getDocuments();
+  Response res = await get(constants.api + "api/housings-demands");
+  if (res.statusCode == 200) {
+    List<dynamic> body = jsonDecode(res.body);
 
-  List<Demand> _demandList = [];
+    List<Demand> _demandList = [];
 
-  snapshot.documents.forEach((document) {
-    Demand demand = Demand.fromMap(document.data);
-    _demandList.add(demand);
-  });
+    body.forEach((obj) {
+      Demand demand = Demand.fromMap(obj);
+      _demandList.add(demand);
+    });
 
-  demandNotifier.demandList = _demandList;
+    demandNotifier.demandList = _demandList;
+  } else {
+    throw "Can't get demands.";
+  }
 }
 
 uploadDemand(Demand demand) async {

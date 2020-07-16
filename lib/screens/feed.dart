@@ -22,6 +22,8 @@ class _FeedState extends State<Feed> {
     HousingNotifier housingNotifier =
         Provider.of<HousingNotifier>(context, listen: false);
     getHoustings(housingNotifier);
+    print("-------------------------");
+    print(housingNotifier.housingList);
     super.initState();
   }
 

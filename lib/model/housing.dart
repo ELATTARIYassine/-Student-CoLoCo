@@ -14,13 +14,13 @@ class Housing {
   Housing();
 
   Housing.fromMap(Map<String, dynamic> data) {
-    id = data['id'];
+    id = data['id'].toString();
     title = data['title'];
     address = data['address'];
-    price = data['price'];
-    capacity = data['capacity'];
-    superficie = data['superficie'];
-    image = data['image'];
+    price = data['price'].toString();
+    capacity = data['capacity'].toString();
+    superficie = data['superficie'].toString();
+    image = data['images'];
     rating = data['rating'];
     latitude = data['latitude'];
     longitude = data['longitude'];
